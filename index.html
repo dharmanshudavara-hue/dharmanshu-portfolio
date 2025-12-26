@@ -290,6 +290,25 @@
         });
       </script>
       <div class="skill-card">🐍 Python</div>
+       <div class="skill-card" id="python-tab" style="cursor:pointer;">🐍 Python</div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const pythonTab = document.getElementById("python-tab");
+          if (pythonTab) {
+            pythonTab.addEventListener("click", function() {
+              const cards = document.querySelectorAll('.project-card h3');
+              for (const card of cards) {
+                if (card.textContent.includes('Network Security Scanner')) {
+                  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  card.parentElement.classList.add('highlight-network');
+                  setTimeout(() => card.parentElement.classList.remove('highlight-network'), 1500);
+                  break;
+                }
+              }
+            });
+          }
+        });
+      </script>
       <div class="skill-card">⚡ C++</div>
       <div class="skill-card">🦋 Flutter</div>
       <div class="skill-card">🐉 Kali Linux</div>
@@ -556,3 +575,4 @@
 </body>
 
 </html>
+
